@@ -1,0 +1,18 @@
+[
+    {
+        "booking_id": "78a465b2-ba11-4e39-b5b4-9d0d77c94ae8",
+        "class_id": "c992d8f7-4762-40e1-a4c2-680daa3bb465",
+        "class_name": "Yoga",
+        "client_name": "Dheeraj",
+        "client_email": "user@example.com",
+        "class_time": "2025-06-09 07:00:00+05:30"
+    },
+    {
+        "booking_id": "e2b62aee-d2f2-4629-9cce-7e4ff3f7dfab",
+        "class_id": "d2b18b88-1d5a-404e-9ade-9ddf48fa892e",
+        "class_name": "Zumba",
+        "client_name": "Chandan",
+        "client_email": "user_2@example.com",
+        "class_time": "2025-06-09 09:00:00+05:30"
+    }
+]
