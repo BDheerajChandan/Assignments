@@ -1,34 +1,47 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Home</title>
-  <script src="/static/portal/script.js"></script>
+    <meta charset="UTF-8">
+    <title>Student Portal</title>
+    <link rel="stylesheet" href="/static/portal/style.css">
+    <script src="/static/portal/script.js"></script>
 </head>
-<body>
-  <h2>Student List</h2>
-  <button onclick="showAddModal()">Add Student</button>
-  <table border="1">
-    <tr><th>Name</th><th>Subject</th><th>Marks</th><th>Actions</th></tr>
-    {% for student in students %}
-    <tr data-id="{{ student.id }}">
-      <td contenteditable="true">{{ student.name }}</td>
-      <td contenteditable="true">{{ student.subject }}</td>
-      <td contenteditable="true">{{ student.marks }}</td>
-      <td>
-        <button onclick="updateStudent(this)">Save</button>
-        <button onclick="deleteStudent(this)">Delete</button>
-      </td>
-    </tr>
-    {% endfor %}
-  </table>
+<body class="home-body">
+    <div class="dashboard">
+        <header>
+            <h1>Student Records</h1>
+            <button class="add-btn" onclick="showAddModal()">+ Add Student</button>
+            <a class="logout-link" href="/logout/">Logout</a>
+        </header>
+        <table>
+            <thead>
+                <tr><th>Name</th><th>Subject</th><th>Marks</th><th>Actions</th></tr>
+            </thead>
+            <tbody>
+                {% for student in students %}
+                <tr data-id="{{ student.id }}">
+                    <td contenteditable="true">{{ student.name }}</td>
+                    <td contenteditable="true">{{ student.subject }}</td>
+                    <td contenteditable="true">{{ student.marks }}</td>
+                    <td>
+                        <button onclick="updateStudent(this)">Save</button>
+                        <button onclick="deleteStudent(this)">Delete</button>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
 
-  <div id="modal" style="display:none;">
-    <input id="name" placeholder="Name"><br>
-    <input id="subject" placeholder="Subject"><br>
-    <input id="marks" type="number" placeholder="Marks"><br>
-    <button onclick="addStudent()">Add</button>
-  </div>
-
-  <a href="/logout/">Logout</a>
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <h3>Add New Student</h3>
+                <input id="name" placeholder="Name">
+                <input id="subject" placeholder="Subject">
+                <input id="marks" type="number" placeholder="Marks">
+                <button onclick="addStudent()">Add</button>
+                <button onclick="document.getElementById('modal').style.display='none'">Cancel</button>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
